@@ -1,14 +1,12 @@
-module bobwinrmntlm
+module main
 
 go 1.18
 
-require (
-	github.com/bodgit/ntlmssp v0.0.0-20230126125331-887e879ef290
-	github.com/masterzen/winrm v0.0.0-20220917170901-b07f6cb0598d
-)
+require github.com/CalypsoSys/bobwinrm v0.0.0-20230312140505-310926f74758
 
 require (
 	github.com/Azure/go-ntlmssp v0.0.0-20211209120228-48547f28849e // indirect
+	github.com/CalypsoSys/bobntlmssp v0.0.0-20230312131519-5d92ca710dc8 // indirect
 	github.com/ChrisTrenkamp/goxpath v0.0.0-20210404020558-97928f7e12b6 // indirect
 	github.com/bodgit/windows v1.0.1 // indirect
 	github.com/gofrs/uuid v4.2.0+incompatible // indirect
