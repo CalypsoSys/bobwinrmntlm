@@ -9,8 +9,14 @@ import (
 )
 
 func main() {
-	runExec("address", "username", "password") // fails
-	runExec("address", "username", "password") // works
+	// winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+	// use to fails with ==> func() winrm.Transporter { return &winrm.ClientNTLM{} },
+	// now works with ==> winrm.NewEncryption("ntlm")
+	runExec("AllowUnencrypted_false_address", "username", "password")
+
+	// winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+	// should wortk with both
+	runExec("AllowUnencrypted_true_address", "username", "password") // works
 }
 
 func runExec(address string, userName string, password string) {
