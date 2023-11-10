@@ -24,3 +24,5 @@ require (
 	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f // indirect
 	golang.org/x/text v0.6.0 // indirect
 )
+
+replace github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87 => ../bobwinrm
