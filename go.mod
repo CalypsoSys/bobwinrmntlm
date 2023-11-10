@@ -2,7 +2,7 @@ module main
 
 go 1.18
 
-require github.com/CalypsoSys/bobwinrm v0.0.0-20230312140505-310926f74758
+require github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87
 
 require (
 	github.com/Azure/go-ntlmssp v0.0.0-20211209120228-48547f28849e // indirect

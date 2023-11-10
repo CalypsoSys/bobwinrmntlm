@@ -2,8 +2,8 @@ github.com/Azure/go-ntlmssp v0.0.0-20211209120228-48547f28849e h1:ZU22z/2YRFLyf/
 github.com/Azure/go-ntlmssp v0.0.0-20211209120228-48547f28849e/go.mod h1:chxPXzSsl7ZWRAuOIE23GDNzjWuZquvFlgA8xmpunjU=
 github.com/CalypsoSys/bobntlmssp v0.0.0-20230312131519-5d92ca710dc8 h1:ilCicqekIaB0g/qxeF39HG6uTiI9eRhE9SOZEzbHNno=
 github.com/CalypsoSys/bobntlmssp v0.0.0-20230312131519-5d92ca710dc8/go.mod h1:Vjp4JyzHu88bTXaIwegBl5+CCyIuodh38/4APRgTzgo=
-github.com/CalypsoSys/bobwinrm v0.0.0-20230312140505-310926f74758 h1:LxeR18bBg1YB+Wa7Y1NjsjnZ7MWDlUkjY0FsQW4lPIU=
-github.com/CalypsoSys/bobwinrm v0.0.0-20230312140505-310926f74758/go.mod h1:NluN89H62RHvgwgsFxxFUaICH+PnVl05BNL2JT+i4ro=
+github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87 h1:2BrGUdIPCsPD23062b5RXeorVeGUCKY8c/+/dP+6gq4=
+github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87/go.mod h1:NluN89H62RHvgwgsFxxFUaICH+PnVl05BNL2JT+i4ro=
 github.com/ChrisTrenkamp/goxpath v0.0.0-20210404020558-97928f7e12b6 h1:w0E0fgc1YafGEh5cROhlROMWXiNoZqApk2PDN0M1+Ns=
 github.com/ChrisTrenkamp/goxpath v0.0.0-20210404020558-97928f7e12b6/go.mod h1:nuWgzSkT5PnyOd+272uUmV0dnAnAn42Mk7PiQC5VzN4=
 github.com/bodgit/windows v1.0.1 h1:tF7K6KOluPYygXa3Z2594zxlkbKPAOvqr97etrGNIz4=
