@@ -43,7 +43,8 @@ func runExec(address string, port int, https bool, userName string, password str
 		fmt.Println("Command Test Ok")
 	}
 
-	psCommand := fmt.Sprintf(`$FormatEnumerationLimit=-1;  Get-WmiObject -Query "%s" | Out-String -Width 4096`)
+	wmiQuery := `select * from Win32_ComputerSystem`
+	psCommand := fmt.Sprintf(`$FormatEnumerationLimit=-1;  Get-WmiObject -Query "%s" | Out-String -Width 4096`, wmiQuery)
 	stdOut, stdErr, exitCode, err = client.RunPSWithContext(context.Background(), psCommand)
 	fmt.Printf("%d\n%v\n%s\n%s\n", exitCode, err, stdOut, stdErr)
 	if err != nil || (len(stdOut) == 0 && len(stdErr) > 0) {
