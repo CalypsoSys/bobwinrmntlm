@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"context"
 	"fmt"
 
@@ -32,10 +31,25 @@ func runExec(address string, port int, https bool, userName string, password str
 
 	client, err := winrm.NewClientWithParameters(endpoint, userName, password, params)
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
 	}
 
-	var outWriter, errWriter bytes.Buffer
-	exitCode, err := client.RunWithContextWithInput(context.Background(), "ipconfig /all", &outWriter, &errWriter, nil)
-	fmt.Printf("%d\n%v\n%s\n%s\n", exitCode, err, outWriter.String(), errWriter.String())
+	stdOut, stdErr, exitCode, err := client.RunCmdWithContext(context.Background(), "ipconfig /all")
+	fmt.Printf("%d\n%v\n%s\n%s\n", exitCode, err, stdOut, stdErr)
+	if err != nil || (len(stdOut) == 0 && len(stdErr) > 0) {
+		_ = exitCode
+		fmt.Println(err)
+	} else {
+		fmt.Println("Command Test Ok")
+	}
+
+	psCommand := fmt.Sprintf(`$FormatEnumerationLimit=-1;  Get-WmiObject -Query "%s" | Out-String -Width 4096`)
+	stdOut, stdErr, exitCode, err = client.RunPSWithContext(context.Background(), psCommand)
+	fmt.Printf("%d\n%v\n%s\n%s\n", exitCode, err, stdOut, stdErr)
+	if err != nil || (len(stdOut) == 0 && len(stdErr) > 0) {
+		_ = exitCode
+		fmt.Println(err)
+	} else {
+		fmt.Println("PowerShell Test Ok")
+	}
 }
