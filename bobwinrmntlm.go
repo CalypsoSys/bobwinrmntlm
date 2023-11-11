@@ -12,18 +12,21 @@ func main() {
 	// winrm set winrm/config/service '@{AllowUnencrypted="true"}'
 	// use to fails with ==> func() winrm.Transporter { return &winrm.ClientNTLM{} },
 	// now works with ==> winrm.NewEncryption("ntlm")
-	runExec("AllowUnencrypted_false_address", "username", "password")
+	//
+	// using https/5986
+	runExec("AllowUnencrypted_false_address", 5986, true, "username", "password")
 
 	// winrm set winrm/config/service '@{AllowUnencrypted="true"}'
 	// should wortk with both
-	runExec("AllowUnencrypted_true_address", "username", "password") // works
+	//
+	// using http/5985
+	runExec("AllowUnencrypted_true_address", 5985, false, "username", "password") // works
 }
 
-func runExec(address string, userName string, password string) {
-	endpoint := winrm.NewEndpoint(address, 5985, false, false, nil, nil, nil, 0)
+func runExec(address string, port int, https bool, userName string, password string) {
+	endpoint := winrm.NewEndpoint(address, port, https, true, nil, nil, nil, 0)
 
 	params := winrm.DefaultParameters
-	//params.TransportDecorator = func() winrm.Transporter { return &winrm.ClientNTLM{} }
 	enc, _ := winrm.NewEncryption("ntlm")
 	params.TransportDecorator = func() winrm.Transporter { return enc }
 
