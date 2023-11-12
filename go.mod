@@ -2,7 +2,11 @@ module main
 
 go 1.18
 
-require github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87
+require (
+	github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87
+	github.com/CalypsoSys/winrmntlm v0.0.0-00010101000000-000000000000
+	github.com/masterzen/winrm v0.0.0-20230926183142-a7fbe840deba
+)
 
 require (
 	github.com/Azure/go-ntlmssp v0.0.0-20211209120228-48547f28849e // indirect
@@ -25,5 +29,3 @@ require (
 	golang.org/x/net v0.10.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 )
-
-replace github.com/CalypsoSys/bobwinrm v0.0.0-20231110185607-50e74da09f87 => ../bobwinrm
